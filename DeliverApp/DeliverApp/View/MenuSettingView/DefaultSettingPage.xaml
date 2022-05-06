@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.MenuSettingView.DefaultSettingPage"
+             Title="默认设置"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="VerticalOptions" Value="Center" ></Setter>
+                <Setter Property="HorizontalOptions" Value="Start"></Setter>
+
+            </Style>
+        
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    <ContentPage.Content>
+       
+            <StackLayout>
+            <ScrollView>
+                <StackLayout>
+
+                <StackLayout Padding="0,5" Spacing="1">
+                <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" Padding="5,0"  VerticalOptions="Center">
+                    <Label Text="角色选择"  WidthRequest="70"  Style="{DynamicResource LabelStyle}" />
+                    <Picker x:Name="CharaName" Title="选择角色"  VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontSize="14"  >
+                        <Picker.Items  >
+                            <x:String>总部</x:String>
+                            <x:String>分公司</x:String>
+                            <x:String>代理商</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Style="{DynamicResource SelectStyle}" >
+                    <Label Text="仓库选择"  WidthRequest="70" Style="{DynamicResource LabelStyle}"/>
+                     <Label Text="请选择仓库"   HorizontalOptions="FillAndExpand" TextColor="#999"    >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="WarehouseSelection_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                        <StackLayout  Style="{DynamicResource SelectStyle}" >
+                            <Label Text="库位选择"  WidthRequest="70" Style="{DynamicResource LabelStyle}"/>
+                            <Label Text="请选择库位"   HorizontalOptions="FillAndExpand"  TextColor="#999"  >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="LocationSelection_Tapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <StackLayout  Style="{DynamicResource SelectStyle}" >
+                        <Label Text="经销商"  WidthRequest="70" Style="{DynamicResource LabelStyle}"/>
+                        <Label Text="请选择经销商"   HorizontalOptions="FillAndExpand"  TextColor="#999"  >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClientSelection_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource SelectStyle}" >
+                        <Label Text="产品代码"  WidthRequest="70" Style="{DynamicResource LabelStyle}"/>
+                        <Label Text="请选择产品代码"   HorizontalOptions="FillAndExpand"  TextColor="#999"  >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ProductSelection_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource SelectStyle}" >
+                        <Label Text="快递公司"  WidthRequest="70" Style="{DynamicResource LabelStyle}"/>
+                        <Label Text="请选择快递公司"   HorizontalOptions="FillAndExpand"  TextColor="#999"  >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ExpressSelection_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                        <StackLayout  Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" Padding="5,0"  VerticalOptions="Center" >
+                        <Label Text="单号"  WidthRequest="70" Style="{DynamicResource LabelStyle}"/>
+                        <Picker Title="请选择单号模式" HorizontalOptions="FillAndExpand"  FontSize="14" >
+                            <Picker.Items  >
+                                <x:String>使用订单号</x:String>
+                                <x:String>使用物流号</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Spacing="1">
+                        <StackLayout  Style="{DynamicResource EntryStyle}" >
+                        <Label Text="包装比例"  WidthRequest="70" Style="{DynamicResource LabelStyle}"/>
+                        <Entry  Placeholder="请输入包装比例"   HorizontalOptions="FillAndExpand"   FontSize="16"  >
+                          
+                        </Entry>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource EntryStyle}" >
+                        <Label Text="默认批号"  WidthRequest="70" Style="{DynamicResource LabelStyle}" />
+                        <Entry Text="" Placeholder="请输入默认批号"   HorizontalOptions="FillAndExpand"  FontSize="16"  />
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource EntryStyle}" >
+                        <Label Text="二维码标签(默认标签)"  WidthRequest="70" Style="{DynamicResource LabelStyle}" />
+                        <Entry Text="f" Placeholder="请选择默认批号"   HorizontalOptions="FillAndExpand"  FontSize="16"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                        <StackLayout  Style="{DynamicResource SwitchStyle}" >
+                        <Label Text="开启悬浮窗"   Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"> </Switch>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                        <StackLayout  Style="{DynamicResource SwitchStyle}">
+                        <Label Text="后台新系统"   Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Spacing="1">
+                        <StackLayout  Style="{DynamicResource SwitchStyle}" >
+                        <Label Text="使用物流单号"   Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource SwitchStyle}" >
+                        <Label Text="使用积分确认"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource SwitchStyle}" >
+                        <Label Text="显示最近选择"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource SwitchStyle}">
+                        <Label Text="使用完成发货"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource SwitchStyle}" >
+                        <Label Text="使用订单凭证"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource SwitchStyle}">
+                        <Label Text="出货查询"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Spacing="1">
+                        <StackLayout  Style="{DynamicResource SwitchStyle}">
+                        <Label Text="扫码查询"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource SwitchStyle}">
+                        <Label Text="按在线订单发货"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                        <StackLayout  Style="{DynamicResource SwitchStyle}" >
+                        <Label Text="使用一码一箱"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Padding="5">
+                <Button Text="保存" Style="{StaticResource BtnBgc}" CornerRadius="5" TextColor="{StaticResource MainBgc}"></Button>
+                
+            </StackLayout>
+
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

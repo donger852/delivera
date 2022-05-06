@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.MenuSettingView.CompanySettingPage"
+             BackgroundColor="{StaticResource PageBbc}"
+             Title="公司设置"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="StackStyle" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"></Setter>
+                <Setter Property="Padding" Value="5,0"></Setter>
+                <Setter Property="Orientation" Value="Horizontal"></Setter>
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    
+    <ContentPage.Content>
+      <ScrollView>
+            <StackLayout>
+                
+            <StackLayout Spacing="0" Orientation="Vertical">
+                <StackLayout Style="{DynamicResource StackStyle}">
+                    <Label Text="企业名称 " WidthRequest="75"
+                            HorizontalOptions="Center" VerticalOptions="CenterAndExpand"   />
+                    <Entry Text=""  Placeholder="请输入企业名称" 
+                            HorizontalOptions="FillAndExpand" FontSize="14" />
+                </StackLayout>
+                    <StackLayout  Style="{DynamicResource StackStyle}">
+                        <Label  Text="机器代码 " WidthRequest="75"
+                            HorizontalOptions="Center" VerticalOptions="CenterAndExpand"   />
+                        <Entry x:Name="MachineCode"   Placeholder="请输入企业名称"
+                            HorizontalOptions="FillAndExpand" FontSize="14" />
+                </StackLayout>
+                
+            </StackLayout>
+                <StackLayout Spacing="1">
+                    <StackLayout   Style="{DynamicResource StackStyle}" >
+                    <Label Text="最短条码长" HorizontalOptions="Center"  VerticalOptions="Center" />
+                    <Label Text="{Binding Value}" BindingContext="{x:Reference MinStepper}"   StyleClass="Stepper.value" WidthRequest="50" HorizontalOptions="Center"  VerticalOptions="Center"/>
+                    <Stepper x:Name="MinStepper" Maximum="29" Minimum="8" Increment="1" HorizontalOptions="EndAndExpand" Scale="0.5" VerticalOptions="CenterAndExpand" Value="10" >
+                    </Stepper>
+                </StackLayout>
+                    <StackLayout  Style="{DynamicResource StackStyle}" >
+                    <Label Text="最长条码长" HorizontalOptions="Center"  VerticalOptions="Center" />
+                    <Label Text="{Binding Value}" BindingContext="{x:Reference MaxStepper}"   StyleClass="Stepper.value" WidthRequest="50" HorizontalOptions="Center"  VerticalOptions="Center"/>
+                    <Stepper x:Name="MaxStepper" Maximum="29" Minimum="8" Increment="1" HorizontalOptions="EndAndExpand" Scale="0.5" VerticalOptions="CenterAndExpand" Value="12" >
+                    </Stepper>
+                </StackLayout>
+                    <StackLayout   Style="{DynamicResource StackStyle}" Padding="5">
+                        <Label Text="单号规则 " 
+                            HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Label x:Name="Lab" Text="" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                        <Switch  Toggled="Switch_Toggled" HorizontalOptions="EndAndExpand" ></Switch>
+                    </StackLayout>
+                    <StackLayout   Style="{DynamicResource StackStyle}" Padding="5" >
+                        <Label Text="使用子系统 " 
+                            HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Label Text="" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                        <Switch   HorizontalOptions="EndAndExpand" ></Switch>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="提示：在条码关联模式下，最小长度为小码长度，最大长度为大码长度，这里必须设置正确，条码关联才能正确运行。" FontSize="10" Margin="20,10,20,10" TextColor="Black"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                    <Button Text="保存" HorizontalOptions="FillAndExpand" VerticalOptions="End"  TextColor="WhiteSmoke" Style="{StaticResource BtnBgc}" >
+                      
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+          
+        </ScrollView>
+        
+
+        
+    </ContentPage.Content>
+</ContentPage>

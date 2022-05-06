@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:fonts="clr-namespace:Android.Graphics.Fonts;assembly=Mono.Android"
+             mc:Ignorable="d"
+             
+             x:Class="DeliverApp.App">
+    
+    
+    
+
+    <Application.Resources>
+        <ResourceDictionary>
+            
+         <Color x:Key="PageBbc" >#e6e6e6</Color>
+         <Color x:Key="MainBgc" >White</Color>
+         <Color x:Key="Textcl">Black</Color>
+         <Color x:Key="Updatecolor">#e10602</Color>
+            
+            <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="White"/>
+            <Setter Property="BarTextColor" Value="{StaticResource Textcl}"></Setter>
+             
+        </Style>
+            <Style x:Key="BtnBgc" TargetType="Button">
+                <Setter Property="Background" >
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="1,0" >
+                            <GradientStop Color="#f58b02"
+                          Offset="0.1" />
+                            <GradientStop Color="#f54502"
+                          Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="CheckBoxbgc" TargetType="CheckBox">
+                <Setter Property="Background" >
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="1,0" >
+                            <GradientStop Color="#f58b02"
+                          Offset="0.1" />
+                            <GradientStop Color="#f54502"
+                          Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor"  Value="{StaticResource Textcl}"></Setter>
+            </Style>
+            <Style TargetType="Switch">
+                <Setter Property="OnColor" Value="MediumSeaGreen"></Setter>
+                <Setter Property="ThumbColor" Value="#eee"/>
+
+            </Style>
+            <Style x:Key="SwitchStyle" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"></Setter>
+                <Setter Property="Padding" Value="5"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+            </Style>
+            <Style x:Key="SelectStyle" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"></Setter>
+                <Setter Property="Padding" Value="5,10"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"></Setter>
+                <Setter Property="Padding" Value="5,0"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+            </Style>
+
+
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+    
+    
+    
+</Application>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DeliverApp"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="DeliverApp.View.SearchPage"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+    <ContentPage.ToolbarItems  >
+        <ToolbarItem  x:Name="Scan" Text="扫码"  IconImageSource="saoma.png"  Order="Default"/>
+      
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        
+            <StackLayout Spacing="1" Orientation="Vertical" >
+                <StackLayout Orientation="Horizontal"  Padding="5"  BackgroundColor="{StaticResource MainBgc}" HorizontalOptions="FillAndExpand"  Margin="0,5" >
+                    <SearchBar  x:Name="searchBar" Text="" Placeholder="扫码/输入订单号"   HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="14" >
+                    </SearchBar>
+                </StackLayout>
+            <StackLayout Spacing="0">
+                
+                <StackLayout x:Name="ListHeader" Spacing="1">
+                    <StackLayout Padding="10,0">
+                        <Label x:Name="Total"  FontAttributes="Bold" VerticalOptions="Center" ></Label>
+                    </StackLayout>
+                    <StackLayout  Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" HorizontalOptions="Fill" Padding="20,10"  >
+                        <Label Text="编号"  WidthRequest="70"  TextColor="{StaticResource Updatecolor}"  VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Label>
+                        <Label Text="名称" TextColor="{StaticResource Updatecolor}"   VerticalOptions="Center"  HorizontalOptions="FillAndExpand"></Label>
+                    </StackLayout>
+                </StackLayout>
+                
+                
+                <StackLayout>
+                    <ListView x:Name="lv_custormer"  SeparatorColor="{StaticResource PageBbc}"  SelectionMode="Single" ItemSelected="lv_custormers_selection"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" HorizontalOptions="Fill" Padding="10,0">
+                                        <Label WidthRequest="70" Text="{Binding Id}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Label>
+                                        <Label Text="{Binding Name}" VerticalOptions="Center"  HorizontalOptions="FillAndExpand"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+                <StackLayout>
+                    <ListView x:Name="lv_store"  SeparatorColor="{StaticResource PageBbc}"  SelectionMode="Single" ItemSelected="lv_store_selection"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" HorizontalOptions="Fill" Padding="10,0">
+                                        <Label WidthRequest="70" Text="{Binding Id}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Label>
+                                        <Label Text="{Binding Name}" VerticalOptions="Center"  HorizontalOptions="FillAndExpand"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+                <StackLayout>
+                    <ListView x:Name="lv_location"  SeparatorColor="{StaticResource PageBbc}"  SelectionMode="Single" ItemSelected="lv_location_selection"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" HorizontalOptions="Fill" Padding="10,0">
+                                        <Label WidthRequest="70" Text="{Binding Id}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Label>
+                                        <Label Text="{Binding Name}" VerticalOptions="Center"  HorizontalOptions="FillAndExpand"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+                <StackLayout>
+                    <ListView x:Name="lv_product"  SeparatorColor="{StaticResource PageBbc}"  SelectionMode="Single" ItemSelected="lv_product_selection"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" HorizontalOptions="Fill" Padding="10,0">
+                                        <Label WidthRequest="70" Text="{Binding Id}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Label>
+                                        <Label Text="{Binding Name}" VerticalOptions="Center"  HorizontalOptions="FillAndExpand"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+                <StackLayout>
+                    <ListView x:Name="lv_express"  SeparatorColor="{StaticResource PageBbc}"  SelectionMode="Single" ItemSelected="lv_express_selection"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" HorizontalOptions="Fill" Padding="10,0">
+                                        <Label WidthRequest="70" Text="{Binding Id}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Label>
+                                        <Label Text="{Binding Name}" VerticalOptions="Center"  HorizontalOptions="FillAndExpand"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        
+
+    </ContentPage.Content>
+</ContentPage>

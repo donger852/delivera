@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.MenuSettingView.UpdatingPage"
+             Title="数据更新"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+
+
+    <!--设置更新数据按钮的样式-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="hintcolor">#444</Color>
+            <Style  x:Key="DaupStyle" TargetType="Button">
+                <Setter Property="WidthRequest" Value="40"/>
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Padding" Value="5,0"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+                <Setter Property="TextColor" Value="Black"/>
+
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout  Padding="0,5" Orientation="Vertical">
+            <Label x:Name="Putting" Text="" Padding="10,5" TextColor="{StaticResource Updatecolor}"></Label>
+
+            <StackLayout  Padding="10" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="产品数据:" />
+                    <Label x:Name="ProNum" Text="152" TextColor="{StaticResource Updatecolor}"  WidthRequest="85"/>
+                    <Button  Text="更新" TextColor="{StaticResource Updatecolor}"  Style="{StaticResource DaupStyle}" Clicked="Proup_Clicked" />
+                    <Button  Text="导入" Style="{StaticResource DaupStyle}"/>
+                    <Button  Text="查看"  Style="{StaticResource DaupStyle}"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout  Padding="10" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="仓库资料:" />
+                    <Label x:Name="StoNum" Text="32" TextColor="{StaticResource Updatecolor}" WidthRequest="85"/>
+                    <Button  Text="更新" TextColor="{StaticResource Updatecolor}"  Style="{StaticResource DaupStyle}" Clicked="Store_Clicked" />
+                    <Button  Text="导入" Style="{StaticResource DaupStyle}"/>
+                    <Button  Text="查看"  Style="{StaticResource DaupStyle}"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout Padding="10" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="库位资料:" />
+                    <Label x:Name="LocatNum" Text="92" TextColor="{StaticResource Updatecolor}" WidthRequest="85"/>
+                    <Button  Text="更新" TextColor="{StaticResource Updatecolor}"  Style="{StaticResource DaupStyle}" Clicked="Locat_Clicked" />
+                    <Button  Text="导入" Style="{StaticResource DaupStyle}"/>
+                    <Button  Text="查看"  Style="{StaticResource DaupStyle}"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout Padding="10" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="客户资料:" />
+                    <Label x:Name="ClientNum" Text="4761" TextColor="{StaticResource Updatecolor}" WidthRequest="85"/>
+                    <Button  Text="更新" TextColor="{StaticResource Updatecolor}"  Style="{StaticResource DaupStyle}"  Clicked="Client_Clicked"/>
+                    <Button  Text="导入" Style="{StaticResource DaupStyle}"/>
+                    <Button  Text="查看"  Style="{StaticResource DaupStyle}"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout  Padding="10" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="快递资料:" />
+                    <Label x:Name="ExpNum" Text="18" TextColor="{StaticResource Updatecolor}" WidthRequest="85"/>
+                    <Button  Text="更新" TextColor="{StaticResource Updatecolor}"  Style="{StaticResource DaupStyle}" Clicked="Exp_Clicked" />
+                    <Button  Text="导入" Style="{StaticResource DaupStyle}"/>
+                    <Button  Text="查看"  Style="{StaticResource DaupStyle}"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout Spacing="2" Padding="10">
+                <Label Text="提示:" FontSize="10" FontAttributes="Bold"></Label>
+                <Label Text="a.数据更新同步需要在线连接状态下才能使用；" FontSize="10"  TextColor="{StaticResource hintcolor}"></Label>
+                <Label Text="b.资料导入，请登录PC端后台下载数据文件，通过传输到采集器内存，导入文件问.xls后缀；" FontSize="10"  TextColor="{StaticResource hintcolor}"></Label>
+                <Label Text="c.客户资料PC端后台下载数据文件为.csv文件，请保存为.xls文件再导入；" FontSize="10"  TextColor="{StaticResource hintcolor}"></Label>
+                <Label Text="d.每次导入会把之前存在的数据覆盖。" FontSize="10"  TextColor="{StaticResource hintcolor}"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

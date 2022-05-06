@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="DeliverApp.MainPage"
+             xmlns:local="clr-namespace:DeliverApp"
+             
+             Title="操作管理中心"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Setting" Text="设置" IconImageSource="setting.png"  Order="Primary"  Clicked="Setting_Clicked"/>
+       
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        
+
+        <ResourceDictionary>
+          
+            <Style TargetType="Grid">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                        Value="LightSkyBlue" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+
+            <CornerRadius x:Key="corbutton">20</CornerRadius>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"></Setter>
+                <Setter Property="TextColor" Value="#222"></Setter>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="ContentLayout" Value="top"></Setter>
+            </Style>
+            <Style TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"/>
+                <Setter Property="CornerRadius" Value="{StaticResource corbutton}"></Setter>
+            </Style>
+
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+    <ScrollView>
+   
+
+            <StackLayout  Padding="0,1">
+        
+        <StackLayout HorizontalOptions="Fill" VerticalOptions="Center" BackgroundColor="{StaticResource MainBgc}">
+                    <Button x:Name="Current_Login"  Text="当前登录:fh(总部)" HorizontalOptions="Fill" TextTransform="None"  VerticalOptions="Center" TextColor="#222" />
+        </StackLayout>
+        
+        <Grid Margin="10">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="2*"  />
+                    <RowDefinition Height="2*" />
+                   
+                </Grid.RowDefinitions>
+            
+                
+                
+                <BoxView Grid.Column="0"/>
+            
+    
+                <Button x:Name="InputName"  Text="入库管理"  ImageSource="ruku.png" Clicked="Input_Clicked"   />
+
+
+                <BoxView Grid.Column="1"  />
+
+                    <Button x:Name="OutputName" Grid.Column="1" Text="发货管理"   ImageSource="fahuo.png" Clicked="Output_Clicked" />
+
+                <BoxView Grid.Row="1"   />
+                    <Button x:Name="SendName" Grid.Row="1" Text="退货管理" ImageSource="tuihuo.png" Clicked="Send_Clicked" />
+
+                <BoxView  Grid.Column="1" Grid.Row="1"/>
+                    <Button  Grid.Row="1" Grid.Column="1"  Text="使用说明" ImageSource="shuoming.png" Command="{Binding NavigateCommand}" CommandParameter="{x:Type local:View.CartridgePage}"  />
+
+               
+        </Grid>
+            
+        </StackLayout>
+        
+            
+        
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

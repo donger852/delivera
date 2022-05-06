@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.BarcodeReplaceView.BarcodeReplacePage"
+             Title="条码替换"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+    <ContentPage.ToolbarItems >
+        <ToolbarItem x:Name="MemoryName" Text="条码记录" IconImageSource="record.png"  Order="Primary"   />
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="TipsTextColor">#333</Color>
+            <Style x:Key="BtnStyle" TargetType="Button">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="1,0" >
+                            <GradientStop Color="#f58b02"
+                          Offset="0.1" />
+                            <GradientStop Color="#f54502"
+                          Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource MainBgc}"></Setter>
+                <Setter Property="Padding" Value="50,0"></Setter>
+                <Setter Property="CornerRadius" Value="20"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        
+        <StackLayout Orientation="Vertical" >
+            <StackLayout Spacing="2">
+                <StackLayout BackgroundColor="{StaticResource MainBgc} " Orientation="Horizontal" Padding="5,0">
+                    <Label Text="替换说明:" HorizontalOptions="Center"  VerticalOptions="Center" ></Label>
+                    <Editor HorizontalOptions="FillAndExpand" VerticalOptions="End" Placeholder="填写替换原因" ></Editor>
+                </StackLayout>
+                <StackLayout BackgroundColor="{StaticResource MainBgc} " Orientation="Horizontal" Padding="5,0">
+                    <Label Text="坏的标签条码:" HorizontalOptions="Center"  VerticalOptions="Center" ></Label>
+                    <Editor HorizontalOptions="FillAndExpand" VerticalOptions="End" Placeholder="请输入旧的标签条码" ></Editor>
+                </StackLayout>
+                <StackLayout BackgroundColor="{StaticResource MainBgc} " Orientation="Horizontal" Padding="5,0">
+                    <Label Text="新的标签条码:" HorizontalOptions="Center"  VerticalOptions="Center" ></Label>
+                    <Editor HorizontalOptions="FillAndExpand" VerticalOptions="End" Placeholder="请输入新的标签条码" ></Editor>
+                </StackLayout>
+
+
+                <StackLayout Padding="10,0" Spacing="1">
+                    <Label Text="操作说明：" TextColor="{StaticResource TipsTextColor}"  Padding="10"></Label>
+                  
+                    
+                    <Label Text="1.先输入坏标签条码，再输入新的标签条码" TextColor="{StaticResource TipsTextColor}"></Label>
+                    <Label Text="2.输完后，检查是否正确，确认好再替换按钮" TextColor="{StaticResource TipsTextColor}"></Label>
+                    <Label Text="3.坏的标签条码：只能是没有入库和库存，已经出库的不能替换" TextColor="{StaticResource TipsTextColor}"></Label>
+                    <Label Text="4.新的标签条码：只能是没使用的标签" TextColor="{StaticResource TipsTextColor}"/>
+                    <Label Text="5.替换后，坏的标签条码自动作废" TextColor="{StaticResource TipsTextColor}"/>
+                    <Label Text="6.只能对小条码（盒码），进行做替换操作" TextColor="{StaticResource TipsTextColor}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="Center" VerticalOptions="Center">
+                    <Button Text="扫码" Style="{DynamicResource BtnStyle}" >
+
+                    </Button>
+                    <Button Text="替换" Style="{DynamicResource BtnStyle}">
+
+                    </Button>
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

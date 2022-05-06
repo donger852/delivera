@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "+ODHD25cI3PxqLj7PRbnyyZVfLAvecVtc3jfPzXMK6jD78F+0Cu7xJdnYSXbYkDBcRwKR6mh4zDYKKmvYQO64Q==",
+  "success": true,
+  "projectFilePath": "F:\\E\\DeliverApp\\DeliverAppUITest1\\DeliverAppUITest1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\nunit3testadapter\\3.13.0\\nunit3testadapter.3.13.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.uitest\\3.0.5\\xamarin.uitest.3.0.5.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\xunit.assert\\2.4.1\\xunit.assert.2.4.1.nupkg.sha512"
+  ],
+  "logs": []
+}

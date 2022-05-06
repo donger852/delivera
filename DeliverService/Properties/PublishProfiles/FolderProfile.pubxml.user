@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>F:\E\DeliverApp\DeliverService\publish</_PublishTargetUrl>
+    <History>True|2022-04-07T01:05:49.4660395Z;True|2022-04-06T17:57:25.9035725+08:00;True|2022-04-06T17:55:32.3285605+08:00;True|2022-03-29T10:26:40.8035593+08:00;</History>
+  </PropertyGroup>
+</Project>

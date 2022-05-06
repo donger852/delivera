@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.ProductManagePage"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:local="clr-namespace:DeliverApp"
+             
+             BackgroundColor="{StaticResource PageBbc}"
+             
+             >
+
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"/>
+            
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+        </Style>
+    
+
+    </ContentPage.Resources>
+    
+    
+    
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout   BindingContext="{x:Static sys:DateTime.Now}">
+                <StackLayout x:Name="Input" IsVisible="True" Padding="0,5" >
+                    <Button x:Name="InputBtn"    />
+                    <Button x:Name="InputList" Text="查看入库单据" />
+                
+
+                </StackLayout>
+                <StackLayout x:Name="Output" IsVisible="False" Padding="0,5" >
+                    <Button x:Name="OutputBtn"  />
+                    <Button x:Name="OutputList" Text="查看退货单据" />
+                </StackLayout>
+                <StackLayout x:Name="Send" IsVisible="false" Padding="0,5">
+                    <StackLayout Spacing="1">
+                        <Button x:Name="OnStock"/>
+                        <Button x:Name="UnStorge" />
+                    </StackLayout>
+                    <StackLayout Spacing="1"   IsVisible="false">
+                        <Button x:Name="GoodsList" Text="按订单查看出货单据"  />
+                        <Button x:Name="CodeList" Text="按条码查看出库单据" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Button x:Name="SCanTotal" Text="查看扫码数统计"  />
+
+                    </StackLayout>
+                    
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

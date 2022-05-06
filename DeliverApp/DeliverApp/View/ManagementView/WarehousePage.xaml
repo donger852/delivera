@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.ManagementView.WarehousePage"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+    
+
+    <ContentPage.Content>
+        <StackLayout Padding="0,5">
+            <StackLayout Spacing="1">
+                <StackLayout Orientation="Horizontal"   VerticalOptions="End" BackgroundColor="{StaticResource MainBgc}" Padding="5" BindingContext="{x:Static sys:DateTime.Now}" >
+                    <Label Text="单号"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"  ></Label>
+                    <Entry  x:Name="OrderText"  WidthRequest="150" Placeholder="请输入单号" TextChanged="OrderEntry_TextChanged"  HorizontalOptions="EndAndExpand"  VerticalOptions="Center" />
+                    <Button x:Name="AutomaticName" Text="自动生成" TextColor="#e10602" 
+                            HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="{StaticResource MainBgc}" Command="{Binding AutomaticCommand}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  VerticalOptions="End" BackgroundColor="{StaticResource MainBgc}" Padding="5">
+                    <Label Text="入库时间"  HorizontalOptions="End" VerticalOptions="Center"  ></Label>
+                    <DatePicker x:Name="CreateTime" HorizontalOptions="FillAndExpand"  VerticalOptions="Center" Format="{Binding StringFormat=yyyy-MM-dd}" />
+                </StackLayout>
+                <StackLayout x:Name="SeleteClients" Orientation="Horizontal"  VerticalOptions="End" BackgroundColor="{StaticResource MainBgc}" Padding="5" IsVisible="false">
+                    <Label  Text="选择客户"  HorizontalOptions="Fill" VerticalOptions="Center"  ></Label>
+                    <Button x:Name="SeleteClientsName" Text="请选择客户" Command="{Binding SeleteClientsCommand}"
+                            HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource MainBgc}"  VerticalOptions="Center"  >
+                    </Button>
+                </StackLayout>
+                <StackLayout x:Name="SeleteStor" Orientation="Horizontal"  VerticalOptions="End" BackgroundColor="{StaticResource MainBgc}" Padding="5"  IsVisible="false">
+                    <Label  Text="选择仓库"  HorizontalOptions="Fill" VerticalOptions="Center"  ></Label>
+                    <Button x:Name="SeleteStorName" Text="请选择仓库"
+                            HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource MainBgc}"  VerticalOptions="Center"  >
+                    </Button>
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" TextColor="{StaticResource Updatecolor}" FontSize="Small"></Label>
+                
+            </StackLayout>
+
+                <StackLayout  VerticalOptions="EndAndExpand"  Padding="5">
+                <Button x:Name="NextBtn" Text="下一步" Style="{StaticResource BtnBgc}"  CornerRadius="5" TextColor="{StaticResource MainBgc}"></Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

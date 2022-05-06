@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.DetailPage"
+             BackgroundColor="{StaticResource PageBbc}"
+             
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="1">
+            <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" Padding="10,0,0,0" >
+                <Entry Text="" Placeholder="请输入订单号" HorizontalOptions="FillAndExpand" ></Entry>
+                <Button Text="搜索" Style="{StaticResource BtnBgc}" Scale="0.7" CornerRadius="20" TextColor="{StaticResource MainBgc}" >
+                </Button>
+            </StackLayout>
+            <StackLayout Padding="10,0,0,0">
+                <Label x:Name="TotalNum" FontAttributes="Bold"></Label>
+            </StackLayout>
+
+
+
+            <StackLayout>
+                <ListView x:Name="lv_goods">
+                    <ListView.Header>
+                        <StackLayout >
+                            <StackLayout  Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" HorizontalOptions="Fill" Padding="10,10"  >
+                                <Label Text="单号"  WidthRequest="70"  TextColor="{StaticResource Updatecolor}"  VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Label>
+                                <Label Text="日期" TextColor="{StaticResource Updatecolor}"   VerticalOptions="Center"  HorizontalOptions="FillAndExpand"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout  Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" HorizontalOptions="Fill" Padding="10,10,2,10"  >
+                                    <Label Text="{Binding GoodsId}"  WidthRequest="150"   VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Label>
+                                    <Label Text="{Binding Goods.CreateTime}"   VerticalOptions="Center"  HorizontalOptions="FillAndExpand"></Label>
+                                    <Label Text="&#xe666;" FontFamily="iconfont.ttf#"  HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

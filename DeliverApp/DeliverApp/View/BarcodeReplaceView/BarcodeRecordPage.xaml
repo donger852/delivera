@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.BarcodeReplaceView.BarcodeRecordPage"
+             Title="条码替换记录查询"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BtnStyle" TargetType="Button">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="1,0" >
+                            <GradientStop Color="#f58b02"
+                          Offset="0.1" />
+                            <GradientStop Color="#f54502"
+                          Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource MainBgc}"></Setter>
+                <Setter Property="Padding" Value="50,0"></Setter>
+                <Setter Property="CornerRadius" Value="20"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="{StaticResource MainBgc}" Orientation="Vertical" Padding="10">
+
+                <StackLayout Orientation="Horizontal" Spacing="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
+                    <Label Text="开始时间(非必填)：" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                    <DatePicker Date="{Binding SelectDate }" Format="yyyy-MM-dd" />
+                    <TimePicker Format="HH:dd:ss"></TimePicker>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"  Spacing="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Label Text="结束时间(非必填)：" VerticalOptions="Center"></Label>
+                    <DatePicker Date="{Binding SelectDate }" Format="yyyy-MM-dd" />
+                    <TimePicker Format="HH:dd:ss"></TimePicker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="旧条码(非必填)：" VerticalOptions="Center"></Label>
+                    <Entry HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="新条码(非必填)：" VerticalOptions="Center"></Label>
+                    <Entry HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="替换说明(非必填)：" VerticalOptions="Center"></Label>
+                    <Entry HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Padding="10">
+                <Button Text="扫码" Style="{DynamicResource BtnStyle}" ></Button>
+                <Button Text="查询" Style="{DynamicResource BtnStyle}"></Button>
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

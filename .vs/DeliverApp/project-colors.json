@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ec6c0f20-7d6e-44ad-b099-21e2e90c6328": {
+      "ProjectGuid": "ec6c0f20-7d6e-44ad-b099-21e2e90c6328",
+      "DisplayName": "DeliverApp",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    },
+    "e6fdcc0e-aa21-4fe5-b73f-79e817d80edf": {
+      "ProjectGuid": "e6fdcc0e-aa21-4fe5-b73f-79e817d80edf",
+      "DisplayName": "DeliverAppUITest1",
+      "ColorIndex": 1
+    },
+    "bcc26d53-7425-4734-b2c6-f7274813706e": {
+      "ProjectGuid": "bcc26d53-7425-4734-b2c6-f7274813706e",
+      "DisplayName": "DeliverApp.iOS",
+      "ColorIndex": 2
+    },
+    "60c50d3c-e707-420b-914f-3bd5299d5f76": {
+      "ProjectGuid": "60c50d3c-e707-420b-914f-3bd5299d5f76",
+      "DisplayName": "DeliverService",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

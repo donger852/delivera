@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.CartridgePage"
+             BackgroundColor="{StaticResource PageBbc}"
+              Title="使用说明"
+             >
+    <ContentPage.Content>
+        <ScrollView >
+
+            <StackLayout  Padding="20,2"  BackgroundColor="{StaticResource MainBgc}" >
+                <StackLayout Spacing="20">
+                    <Label Text="PDA应用程序使用说明" FontAttributes="Bold" FontSize="20" Padding="10"></Label>
+                    <Label Text="一、基础设置" FontAttributes="Bold"></Label>
+                    <Label Text="配置采集器服务器地址"></Label>
+                    <Label Text="二、数据更新" FontAttributes="Bold"></Label>
+                    <Label Text="更新采集器中的产品，客户，仓库以及库位资料"></Label>
+                    <Label Text="三、入库管理" FontAttributes="Bold"></Label>
+                    <Label Text="采集器入库操作"></Label>
+                    <Label Text="四、发货操作" FontAttributes="Bold"></Label>
+                    <Label Text="1.已入库操作"></Label>
+                    <Label Text="2.不入库操作"></Label>
+                    <Label Text="五、离线操作" FontAttributes="Bold"></Label>
+                    <Label Text="离线扫苗以及上传离线扫描数据"></Label>
+                    <Label Text="六、入出库单据查看" FontAttributes="Bold"></Label>
+                    <Label Text="查看入库单据"></Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.MenuSettingView.SystemSettingPage"
+             Title="系统设置"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="0,5">
+            <ContentView>
+                <StackLayout Spacing="1">
+
+
+                    <StackLayout Style="{DynamicResource SwitchStyle}" >
+                        <Label Text="日志悬浮窗"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                    <StackLayout Style="{DynamicResource SwitchStyle}">
+                        <Label Text="扫码声音"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                    <StackLayout Style="{DynamicResource SwitchStyle}" >
+                        <Label Text="扫码振动"  Style="{DynamicResource LabelStyle}" />
+                        <Switch HorizontalOptions="EndAndExpand"></Switch>
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
+            <StackLayout Padding="5" VerticalOptions="EndAndExpand">
+                <Button Text="保存" Style="{StaticResource BtnBgc}" CornerRadius="5" TextColor="{StaticResource MainBgc}"></Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.MenuSettingView.VerifySettingPage"
+             Title="验证设置"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+    <ContentPage.Resources>
+        <Style x:Key="checklabel" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+
+        <Style x:Key="SwitchStyle" TargetType="StackLayout">
+            <Setter Property="Orientation" Value="Horizontal"></Setter>
+            <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"></Setter>
+            <Setter Property="Padding" Value="5"></Setter>
+            <Setter Property="VerticalOptions" Value="Center"></Setter>
+        </Style>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout Padding="0,5">
+                    <StackLayout Spacing="1" >
+                        <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" Padding="10,5"  >
+                            <Label Text="上传模式" VerticalOptions="Center"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                <RadioButton  Value="Online" IsChecked="{Binding Online, Mode=TwoWay}"  CheckedChanged="RadioButton_CheckedChanged" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                <Label   Text="在线" Style="{DynamicResource checklabel}"  />
+                                <RadioButton  Value="Offline" IsChecked="{Binding Offline, Mode=TwoWay}"  CheckedChanged="RadioButton_CheckedChanged" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                <Label  Text="离线"  Style="{DynamicResource checklabel}"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" Padding="10,5"  >
+                            <Label Text="数据模式" VerticalOptions="Center"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                <RadioButton  HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                <Label Text="在线" Style="{DynamicResource checklabel}"/>
+                                <RadioButton  HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                                <Label Text="离线"  Style="{DynamicResource checklabel}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="1">
+                        <StackLayout  Style="{DynamicResource SwitchStyle}" >
+                            <Label Text="检查网络"  Style="{DynamicResource LabelStyle}" />
+                            <Switch HorizontalOptions="EndAndExpand"></Switch>
+                        </StackLayout>
+                        <StackLayout Style="{DynamicResource SwitchStyle}"  >
+                            <Label Text="产品验证"  Style="{DynamicResource LabelStyle}" />
+                            <Switch HorizontalOptions="EndAndExpand"></Switch>
+                        </StackLayout>
+                        <StackLayout Style="{DynamicResource SwitchStyle}"  >
+                            <Label Text="仓库验证"  Style="{DynamicResource LabelStyle}" />
+                            <Switch HorizontalOptions="EndAndExpand"></Switch>
+                        </StackLayout>
+                        <StackLayout Style="{DynamicResource SwitchStyle}"  >
+                            <Label Text="库位验证"  Style="{DynamicResource LabelStyle}" />
+                            <Switch HorizontalOptions="EndAndExpand"></Switch>
+                        </StackLayout>
+                        <StackLayout Style="{DynamicResource SwitchStyle}"  >
+                            <Label Text="客户验证"  Style="{DynamicResource LabelStyle}" />
+                            <Switch HorizontalOptions="EndAndExpand"></Switch>
+                        </StackLayout>
+                        <StackLayout Style="{DynamicResource SwitchStyle}" >
+                            <Label Text="数量验证"  Style="{DynamicResource LabelStyle}" />
+                            <Switch HorizontalOptions="EndAndExpand"></Switch>
+                        </StackLayout>
+                        <StackLayout Style="{DynamicResource SwitchStyle}"  >
+                            <Label Text="条码验证"  Style="{DynamicResource LabelStyle}" />
+                            <Switch HorizontalOptions="EndAndExpand"></Switch>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" Padding="5,0">
+                            <Label Text="条码正则" VerticalOptions="Center" />
+                            <Entry HorizontalOptions="FillAndExpand"  Text="\d+"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Padding="5">
+                <Button Text="保存" Style="{StaticResource BtnBgc}" CornerRadius="5" TextColor="{StaticResource MainBgc}"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

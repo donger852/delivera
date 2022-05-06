@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.ManagementView.SCanTotalPage"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:local="clr-namespace:DeliverApp"
+             Title="扫码数据统计"
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="日期筛选" IconImageSource="calendar.png"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    
+    <ContentPage.Content>
+        <StackLayout >
+            <CollectionView    ItemsSource="{x:Static local:ViewModel.SCanTotalViewModel.DataCount}" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="2" >
+
+
+                            <StackLayout  Padding="10" BackgroundColor="{StaticResource MainBgc}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Spacing="2" Margin="0,0,0,5">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                            <Label Text="时间："></Label>
+                                            <Label Text="{Binding TimeName}"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="StartAndExpand">
+                                            <Label Text="扫码总数："></Label>
+                                            <Label Text="{Binding TotalCount}"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="StartAndExpand">
+                                            <Label Text="成功总数："></Label>
+                                            <Label Text="{Binding SuccessCount}" ></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="StartAndExpand">
+                                            <Label Text="失败总数："></Label>
+                                            <Label Text="{Binding FailureCount}"></Label>
+                                        </StackLayout>
+                                   
+                                </StackLayout>
+                       
+                        </StackLayout>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+             
+            </CollectionView>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

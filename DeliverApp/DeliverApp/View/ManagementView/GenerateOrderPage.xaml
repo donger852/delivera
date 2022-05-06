@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.ManagementView.GenerateOrderPage"
+             xmlns:local="clr-namespace:DeliverApp"
+             
+             
+             
+             BackgroundColor="{StaticResource PageBbc}"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Btn" TargetType="Button">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+               
+                <Setter Property="ContentLayout" Value="right"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"></Setter>
+            </Style>
+            <Style x:Key="FooterBtn" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource MainBgc}"></Setter>
+                <Setter Property="FontSize" Value="8"></Setter>
+                <Setter Property="ContentLayout" Value="top"></Setter>
+
+            </Style>
+           
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    
+    <ContentPage.Content>
+       
+        <StackLayout Spacing="2">
+           
+                <StackLayout>
+            
+                    <StackLayout BackgroundColor="{StaticResource MainBgc}">
+                        <Label x:Name="OrderTitle" Text="f1202203150002"  HorizontalOptions="CenterAndExpand"></Label>
+                    </StackLayout>
+                    <StackLayout Spacing="1">
+
+                        <StackLayout x:Name="IsOnStock"  Spacing="1" >
+                            <StackLayout x:Name="IsSelectProduct" Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}"  Padding="10,0,0,0">
+                                <Label Text="选择产品" VerticalOptions="Center"></Label>
+                                <Button x:Name="SelectProduct" Text="请选择产品" Style="{DynamicResource Btn}"  ></Button>
+                            </StackLayout>
+                            <StackLayout x:Name="IsSelectPlace" Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" Padding="10,0,0,0">
+                                <Label Text="选择库位" VerticalOptions="Center"></Label>
+                                <Button x:Name="SelectPlace" Text="请选择库位"  Style="{DynamicResource Btn}"  ></Button>
+                            </StackLayout>
+                            <StackLayout x:Name="IsSelectClient" Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}" Padding="10,0,0,0">
+                                <Label Text="选择客户" VerticalOptions="Center"></Label>
+                                <Button x:Name="SelectClient" Text="请选择客户"  Style="{DynamicResource Btn}" ></Button>
+                            </StackLayout>
+                            <StackLayout x:Name="IsSelectCreate" Spacing="1">
+                            <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}"  Padding="10,0,0,0">
+                                <Label Text="生成日期" HorizontalOptions="End" VerticalOptions="Center" ></Label>
+                                <DatePicker x:Name="datatime" HorizontalOptions="FillAndExpand"  VerticalOptions="Center">
+                                    <DatePicker.Format >yyyy-MM-dd</DatePicker.Format>
+                                </DatePicker>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}"  Padding="10,0,0,0">
+                                <Label Text="生产批号" HorizontalOptions="End" VerticalOptions="Center"></Label>
+                                <Entry x:Name="lotnum"  HorizontalOptions="FillAndExpand"  VerticalOptions="Center" Placeholder="请设置生产批号" TextChanged="Entry_TextChanged"></Entry>
+                            </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+
+
+                   
+                        <StackLayout Spacing="0">
+                            <StackLayout Orientation="Horizontal" BackgroundColor="{StaticResource MainBgc}"  Padding="10,0,0,0">
+                                <Label x:Name="Counts" Text="总数:0"  HorizontalOptions="FillAndExpand"  VerticalOptions="Center" ></Label>
+                            <Label x:Name="Success" Text="成功:0"  HorizontalOptions="FillAndExpand"  VerticalOptions="Center"></Label>
+                            <Label x:Name="Fail" Text="失败:0"  HorizontalOptions="FillAndExpand"  VerticalOptions="Center"></Label>
+                                <StackLayout HorizontalOptions="FillAndExpand"  VerticalOptions="Center"  Orientation="Horizontal">
+                                    <CheckBox Color="{DynamicResource CheckBoxbgc}" >
+                                    </CheckBox>
+                                    <Label Text="删除条码" VerticalOptions="Center" TextColor="{StaticResource Updatecolor}" ></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout>
+                                <StackLayout BackgroundColor="{StaticResource MainBgc}"  Orientation="Horizontal" >
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                    <Entry x:Name="CodeName" Placeholder="扫码/请输入商品条码"  />
+                                    <Button Text="确定" HorizontalOptions="EndAndExpand" BackgroundColor="{StaticResource MainBgc}"  Clicked="CheckBtn_Clicked"></Button>
+                                    </StackLayout>
+                                </StackLayout>
+                               
+                                <StackLayout Orientation="Vertical"  Padding="10,0" Spacing="2" BackgroundColor="{StaticResource MainBgc}">
+                                    <StackLayout  >
+                                        <Label x:Name="ErrorText"  TextColor="Red" ></Label>
+                                    </StackLayout>
+                                    <ListView  x:Name="lv_code" BackgroundColor="{StaticResource MainBgc}" >
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell >
+                                                    <StackLayout Orientation="Horizontal"  HorizontalOptions="Fill" BackgroundColor="{StaticResource MainBgc}" >
+                                                    <Image Source="check.png" Scale="0.7" VerticalOptions="CenterAndExpand" ></Image>
+                                                    <StackLayout Orientation="Vertical" Spacing="0.1"  VerticalOptions="CenterAndExpand" >
+                                                        <Label Text="{Binding Product.Name}"  FontSize="12"  Padding="0,-1"></Label>
+                                                        <StackLayout Orientation="Horizontal" Padding="0,-2">
+                                                            <Label Text="{Binding CodeTime} "  FontSize="12"></Label>
+                                                            <Label Text="{Binding CodeId}" HorizontalOptions="FillAndExpand"  VerticalOptions="End" FontSize="12"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" >
+                                                            <Label x:Name="TipsName" Text="{Binding CodeId}" TextColor="#008000" FontSize="10" VerticalOptions="CenterAndExpand"></Label>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                    <ImageButton Source="cancel.png" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="{StaticResource MainBgc}"  Scale="1"></ImageButton>
+                                                </StackLayout>
+                                            </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </StackLayout>
+                               
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    
+                </StackLayout>
+               
+            </StackLayout>
+          
+
+            <Grid BackgroundColor="White" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+
+                <Button Grid.Column="0"  Text="整单删除" ImageSource="delete.png" Style="{DynamicResource FooterBtn}" ></Button>
+                <Button   Grid.Column="1" Text="查看单据" ImageSource="bill.png"  Style="{DynamicResource FooterBtn}" ></Button>
+
+                <Button x:Name="Scan"  Grid.Column="2" Text="扫码" ImageSource="scan.png"  Style="{DynamicResource FooterBtn}"></Button>
+
+
+                <Button x:Name="ContinutyScan"  Grid.Column="3" Text="开启连扫" ImageSource="open.png" Style="{DynamicResource FooterBtn}" ></Button>
+
+                <Button x:Name="FinishBtn"  Grid.Column="4" Text="完成" ImageSource="finish.png"  Style="{DynamicResource FooterBtn}" ></Button>
+
+
+                </Grid>
+            </StackLayout>
+
+      
+    </ContentPage.Content>
+</ContentPage>

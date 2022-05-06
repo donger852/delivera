@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_AppExtensionDebugSymbolProperties Include="DeliverApp.iOS.app">
+      <NativeExecutable>DeliverApp.iOS</NativeExecutable>
+      <NoDSymUtil>false</NoDSymUtil>
+      <NoSymbolStrip>false</NoSymbolStrip>
+      <SymbolsList>\Users\mt\Library\Caches\Xamarin\mtbs\builds\DeliverApp.iOS\956bd60da51cda91b506d0a6b720cf9c9c3270800b76f47edbebe6caab089d7a\obj\iPhone\Debug\mtouch-symbols.list</SymbolsList>
+    </_AppExtensionDebugSymbolProperties>
+  </ItemGroup>
+</Project>

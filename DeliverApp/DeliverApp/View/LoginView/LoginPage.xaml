@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliverApp.View.LoginView.LoginPage">
+    
+        <StackLayout  Padding="10,0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Spacing="1" Scale="0.8">
+            <StackLayout Spacing="1" >
+                <Label Text="登录" FontAttributes="Bold" FontSize="25"></Label>
+            </StackLayout>
+            <StackLayout  Spacing="1">
+                <Label Text="服务登录地址"></Label>
+                <Entry x:Name="Url"  ></Entry>
+            </StackLayout >
+            <StackLayout  Spacing="1">
+                <Label Text="账号"></Label>
+                <Entry x:Name="UserName" ></Entry>
+            </StackLayout>
+            <StackLayout  Spacing="1">
+                <Label Text="密码" ></Label>
+                <Entry x:Name="Password" IsPassword="True" ></Entry>
+            </StackLayout>
+             <Label x:Name="ValidateMsg"  TextColor="Red" HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
+                <CheckBox VerticalOptions="CenterAndExpand" ></CheckBox>
+                <Label Text="记住密码" VerticalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+            <Button x:Name="LoginBut"  VerticalOptions="Center" Text="登录"  TextColor="White" >
+                <Button.Background >
+                    <LinearGradientBrush EndPoint="1,0" >
+                        <GradientStop Color="#f58b02"
+                          Offset="0.1" />
+                        <GradientStop Color="#f54502"
+                          Offset="1.0" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        <Button Text="切换公司"  Clicked="SwitchCompany_Clicked" TextColor="{StaticResource Updatecolor}" BackgroundColor="{StaticResource MainBgc}" ></Button>
+        </StackLayout>
+ 
+</ContentPage>
